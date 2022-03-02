@@ -13,14 +13,13 @@ const Header = () => {
   const navigate = useNavigate();
   const loginApi = '/users/login/';
   const { activateBrowserWallet, account, chainId, deactivate } = useEthers();
-  const { data: userData, refetch }: { data: IUser; refetch: () => void } =
-    useReactQuery(
-      'login',
-      {
-        url: loginApi,
-      },
-      { enabled: true }
-    );
+  const { data: userData }: { data: IUser } = useReactQuery(
+    'login',
+    {
+      url: loginApi,
+    },
+    { enabled: false }
+  );
 
   // ANCHOR: 로그인
   const mutationLogin = useReactMutation({
@@ -57,7 +56,9 @@ const Header = () => {
       if (account && account !== userData?.users?.address) {
         mutationLogin.mutate({ account: account, chainId: chainId });
       } else {
-        refetch();
+        // FIXME: refetch 주석처리
+        // refetch();
+        console.log('refetch 주석처리');
       }
     }
   }, [account, userData]);
@@ -76,8 +77,9 @@ const Header = () => {
 
   useEffect(() => {
     if (store.isAuthenticated) {
+      // FIXME: refetch 주석처리
       // post 요청후 refetch로 정보업데이트
-      refetch();
+      // refetch();
     }
   }, [store.Authorization]);
 
