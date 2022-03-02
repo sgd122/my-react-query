@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    /* 기본 옵션 */
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true /* 자바스크립트 파일 컴파일 허용 여부 */,
+    "checkJs": false,
+    "jsx": "react-jsx" /* JSX 코드 생성 설정: 'preserve', 'react-native', 혹은 'react'. */,
+    "noEmit": true /* 결과 파일 내보낼지 여부 */,
+    "isolatedModules": true /* 각 파일을 분리된 모듈로 트랜스파일 ('ts.transpileModule'과 비슷합니다). */,
+
+    /* 엄격한 타입-확인 옵션 */
+    "strict": true /* 모든 엄격한 타입-체킹 옵션 활성화 여부 */,
+    "noImplicitAny": true /* 'any' 타입으로 구현된 표현식 혹은 정의 에러처리 여부 */,
+    "strictNullChecks": false /* 엄격한 null 확인 여부 */,
+    "strictFunctionTypes": true /* 함수 타입에 대한 엄격한 확인 여부 */,
+    "strictBindCallApply": true /* 함수에 엄격한 'bind', 'call' 그리고 'apply' 메소드 사용 여부 */,
+    // "strictPropertyInitialization": true /* 클래스의 값 초기화에 엄격한 확인 여부 */,
+    // "noImplicitThis": true /* 'any' 타입으로 구현된 'this' 표현식 에러처리 여부 */,
+    "alwaysStrict": true /* strict mode로 분석하고 모든 소스 파일에 "use strict"를 추가할 지 여부 */,
+
+    /* 추가적인 확인 */
+    "noUnusedLocals": true /* 사용되지 않은 지역 변수에 대한 에러보고 여부 */,
+    "noUnusedParameters": false /* 사용되지 않은 파라미터에 대한 에러보고 여부 */,
+    "noImplicitReturns": true /* 함수에서 코드의 모든 경로가 값을 반환하지 않을 시 에러보고 여부 */,
+    "noFallthroughCasesInSwitch": true /* switch문에서 fallthrough 케이스에 대한 에러보고 여부 */,
+
+    /* 모듈 해석 옵션 */
+    "moduleResolution": "node" /* 모듈 해석 방법 설정: 'node' (Node.js) 혹은 'classic' (TypeScript pre-1.6). */,
+    "baseUrl": "src" /* non-absolute한 모듈 이름을 처리할 기준 디렉토리 */,
+    "allowSyntheticDefaultImports": true /* default export이 아닌 모듈에서도 default import가 가능하게 할 지 여부, 해당 설정은 코드 추출에 영향은 주지 않고, 타입확인에만 영향을 줍니다. */,
+    "esModuleInterop": false /* 모든 imports에 대한 namespace 생성을 통해 CommonJS와 ES Modules 간의 상호 운용성이 생기게할 지 여부, 'allowSyntheticDefaultImports'를 암시적으로 승인합니다. */,
+
+    /* 추가적 옵션 */
+    "skipLibCheck": true /* 정의 파일의 타입 확인을 건너 뛸 지 여부 */,
+    "forceConsistentCasingInFileNames": true /* 같은 파일에 대한 일관되지 않은 참조를 허용하지 않을 지 여부 */,
+
+    "resolveJsonModule": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "public", "storybook-static"]
+}

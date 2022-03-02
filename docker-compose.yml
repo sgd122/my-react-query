@@ -1,0 +1,17 @@
+version: "3"
+
+services: # docker-compose 에서 컨테이너(service) 단위를 묶음
+  kas-frontend: # 앱 service 이름
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment: # docker 내에서 필요한 환경변수 설정
+      - NODE_ENV=development
+      - CHOKIDAR_USERPOLLING=true
+    ports: # docker 와 로컬에서 서로 입력 출력할 포트, 접근할 포트
+      - "80:80"
+
+    volumes: # 로컬 폴더(.)와 docker 의 /code 폴더를 마운트(연결)
+      - ./:/code/
+      - ./node_modules/:/code/node_modules/
+  
